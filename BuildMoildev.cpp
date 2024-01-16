@@ -47,7 +47,9 @@ int main(int argc, char **argv) {
     cout << "    .\\BuildMoildev [run || -r || --run] WIN32" << endl;
     cout << "> POSIX/MacOS (Unix): " << endl;
     cout << "    ./BuildMoildev [run || -r || --run] [UNIX || MACH || APPLE]" << endl;
+    cout << endl;
 
+    // Configure everything necessary for the compilation process.
     MoildevBuilder.Executable           = (char *)"MoildevFEMSA";
     MoildevBuilder.CPPSourceFile        = (char *)"MoildevFEMSA.cpp";
     MoildevBuilder.LocalSourceDirectory = (char *)"moil_sdk/moildev.a";
@@ -63,7 +65,6 @@ int main(int argc, char **argv) {
             MoildevBuilder.ExternalPackages);
             snprintf(ExecutableFile, 1024, "%s%s", MoildevBuilder.RunBuilderWIN32, MoildevBuilder.Executable);
 
-            system(ExecutableFile);
             system(OutputSystemExecuting);
         }
     } else if (EXECINPOSIX) {
@@ -76,11 +77,15 @@ int main(int argc, char **argv) {
             MoildevBuilder.ExternalPackages, MoildevBuilder.PackageConfigurationFlagsPOSIX);
             snprintf(ExecutableFile, 1024, "%s%s", MoildevBuilder.RunBuilderPOSIX, MoildevBuilder.Executable);
 
-            system(ExecutableFile);
             system(OutputSystemExecuting);
         }
     }
 
-    puts(OutputSystemExecuting);
+    system(ExecutableFile);
+    cout << endl;
+
+    if (EXECINWIN32) cout << "[+] System: Windows (WIN32)"        << endl;
+    else             cout << "[+] System: Unix/Apple/Mac (POSIX)" << endl;
+    cout << "[+] Prompt: " << OutputSystemExecuting << endl;
     return 0;
 }
