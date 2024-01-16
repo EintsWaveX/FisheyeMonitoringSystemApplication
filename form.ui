@@ -1,0 +1,4554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Fisheye Monitoring System Application</string>
+  </property>
+  <property name="toolTip">
+   <string notr="true"/>
+  </property>
+  <property name="statusTip">
+   <string notr="true"/>
+  </property>
+  <property name="whatsThis">
+   <string notr="true"/>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	background-color: rgb(0, 0, 79)
+}</string>
+  </property>
+  <widget class="QFrame" name="MainFrame">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>1240</width>
+     <height>660</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+	background-color: rgb(255, 255, 255)
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <widget class="QLabel" name="MainApplicationTitle">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>2</y>
+      <width>1200</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;strong&gt;Fish Eye Monitoring System Application&lt;/strong&gt; | &lt;i&gt;Multi-views&lt;/i&gt;</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="Line" name="LineXAxisMainApplicationTitleAndButtonsOfParametersSeparator">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>1201</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ImageProcessingButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Monitoring - Image&lt;/h2&gt;
+&lt;p&gt;Getting the image by the normal fisheye camera and process the captured (displayed) image afterwards.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Image Processing&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="whatsThis">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	font: bold;
+	border-radius: 10px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(220, 85, 0);
+}
+
+QPushButton:hover {
+	background-color: rgb(255, 85, 0);
+}
+
+QPushButton:pressed {
+	background-color: rgb(185, 85, 0);
+}</string>
+    </property>
+    <property name="text">
+     <string>Image</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="VideoProcessingButton">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>70</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Monitoring - Video&lt;/h2&gt;
+&lt;p&gt;Getting the video by the normal fisheye camera and process the captured (displayed) video afterwards.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Video Processing&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	font: bold;
+	border-radius: 10px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(220, 85, 0);
+}
+
+QPushButton:hover {
+	background-color: rgb(255, 85, 0);
+}
+
+QPushButton:pressed {
+	background-color: rgb(185, 85, 0);
+}</string>
+    </property>
+    <property name="text">
+     <string>Video</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StreamingButton">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>70</y>
+      <width>110</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Monitoring - Streaming&lt;/h2&gt;
+&lt;p&gt;Streaming over the fisheye camera, connected either by Bluetooth or external cable, then process the streaming video while onboard.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Streaming Processing Onboard&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	font: bold;
+	border-radius: 10px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(220, 170, 0);
+}
+
+QPushButton:hover {
+	background-color: rgb(255, 170, 0);
+}
+
+QPushButton:pressed {
+	background-color: rgb(185, 170, 0);
+}</string>
+    </property>
+    <property name="text">
+     <string>Streaming</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="RecordingButton">
+    <property name="geometry">
+     <rect>
+      <x>305</x>
+      <y>70</y>
+      <width>110</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Monitoring - Recording&lt;/h2&gt;
+&lt;p&gt;Record using the fisheye camera, connected either by Bluetooth or external cable, then process the recorded video afterwards.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Recorded Video Processing&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	font: bold;
+	border-radius: 10px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(220, 170, 0);
+}
+
+QPushButton:hover {
+	background-color: rgb(255, 170, 0);
+}
+
+QPushButton:pressed {
+	background-color: rgb(185, 170, 0);
+}</string>
+    </property>
+    <property name="text">
+     <string>Recording</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="Line" name="LineXAxisIVSRAndSPSeparator">
+    <property name="geometry">
+     <rect>
+      <x>421</x>
+      <y>65</y>
+      <width>5</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SaveParametersButton">
+    <property name="geometry">
+     <rect>
+      <x>431</x>
+      <y>70</y>
+      <width>160</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+      <pointsize>10</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Monitoring - Save Parameters&lt;/h2&gt;
+&lt;p&gt;Use to save some custom existing (or built-in) parameters for the fisheye monitoring camera system setup after some configurations to be done before/afterhand.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Saving Existing Parameters&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	font: bold;
+	border-radius: 10px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 220, 127);
+}
+
+QPushButton:hover {
+	background-color: rgb(0, 255, 127);
+}
+
+QPushButton:pressed {
+	background-color: rgb(0, 185, 127);
+}</string>
+    </property>
+    <property name="text">
+     <string>Save Parameters</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="Line" name="LineXAxisButtonsOfParametersSeparator">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>105</y>
+      <width>1201</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>1201</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="CameraFieldViewLayout">
+     <item row="1" column="0">
+      <widget class="QGraphicsView" name="FCFV_OriginalView">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QGraphicsView" name="FCFV_SecondZoneView">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="NormalFisheyeCameraFieldView_FirstZoneLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font-family: &quot;Segoe UI Variable Display&quot;;
+	color: rgb(255, 255, 255);
+	background-color: rgb(150, 85, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Fisheye Camera Field View &lt;strong&gt;(Zone 1)&lt;/strong&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="NormalFisheyeCameraFieldView_SecondZoneLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font-family: &quot;Segoe UI Variable Display&quot;;
+	color: rgb(255, 255, 255);
+	background-color: rgb(150, 85, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Fisheye Camera Field View &lt;strong&gt;(Zone 2)&lt;/strong&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="NormalFisheyeCameraFieldView_OriginalLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font-family: &quot;Segoe UI Variable Display&quot;;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 85, 255);
+}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="text">
+        <string>Normal Fisheye Camera Field View &lt;strong&gt;(Original)&lt;/strong&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <layout class="QGridLayout" name="FCFV_OriginalOperationField">
+       <item row="0" column="0">
+        <widget class="QLabel" name="FCFV_OOF_RotateLabel">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Degrees&lt;/h2&gt;
+&lt;p&gt;Drag up/down the spin box (or capture exact degrees value), going from 0 up to 360.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-360 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="text">
+          <string>Rotate (degrees)</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QRadioButton" name="FCFV_OOF_ViewFirstZoneRadioButton">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Radio Box - Camera Zone 1&lt;/h2&gt;
+&lt;p&gt;Process the captured parameters by the fisheye's camera lens into the Camera Zone 1 graphical view.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Camera Zone 1 Processing&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QRadioButton {
+	font: bold;
+}
+
+QRadioButton:hover {
+	color: rgb(85, 170, 255);
+}
+
+QRadioButton:pressed {
+	color: rgb(85, 135, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>View (Zone 1)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSpinBox" name="FCFV_OOF_RotateSpinBox">
+         <property name="font">
+          <font>
+           <family>Fira Code</family>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Degrees&lt;/h2&gt;
+&lt;p&gt;Drag up/down the spin box (or capture exact degrees value), going from 0 up to 360.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-360 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="maximum">
+          <number>360</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QRadioButton" name="FCFV_OOF_ViewSecondZoneRadioButton">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Radio Box - Camera Zone 2&lt;/h2&gt;
+&lt;p&gt;Process the captured parameters by the fisheye's camera lens into the Camera Zone 2 graphical view.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Camera Zone 2 Processing&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QRadioButton {
+	font: bold;
+}
+
+QRadioButton:hover {
+	color: rgb(255, 150, 255);
+}
+
+QRadioButton:pressed {
+	color: rgb(255, 115, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>View (Zone 2)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="Line" name="FCFV_OOF_LineYAxis01Separator">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="Line" name="FCFV_OOF_LineYAxis02Separator">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="1">
+      <widget class="QGraphicsView" name="FCFV_FirstZoneView">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>455</y>
+      <width>1201</width>
+      <height>156</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="PlateDetectionLayout">
+     <item row="0" column="1">
+      <widget class="QLabel" name="PlateDetectionFirstZoneLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font-family: &quot;Segoe UI Variable Display&quot;;
+	color: rgb(255, 255, 255);
+	background-color: rgb(150, 85, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Plate Detection &lt;strong&gt;(Zone 1)&lt;/strong&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QGraphicsView" name="PDZ02GraphicalFieldView">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="PlateDetectionOriginalLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font-family: &quot;Segoe UI Variable Display&quot;;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 85, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Plate Detection &lt;strong&gt;(Original)&lt;/strong&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="PlateDetectionSecondZoneLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	font-family: &quot;Segoe UI Variable Display&quot;;
+	color: rgb(255, 255, 255);
+	background-color: rgb(150, 85, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>Plate Detection &lt;strong&gt;(Zone 2)&lt;/strong&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QGraphicsView" name="PDOGraphicalFieldView">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <layout class="QHBoxLayout" name="PlateDetectionFirstZoneLayout">
+       <item>
+        <widget class="QLabel" name="CountDetectedPDZ01Label">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Count Detection (Zone 1)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the detected count plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Count Detection&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="text">
+          <string>Count Detected:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="CountDetectedPDZ01LineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Fira Code</family>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Count Detection (Zone 1)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the detected count plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Count Detection&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="PredictionPDZ02Label_2">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Prediction (Zone 1)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the predicted plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Prediction&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="text">
+          <string>Prediction:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="PredictionPDZ01LineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Fira Code</family>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Prediction (Zone 1)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the predicted plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Prediction&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="SaveButtonPDZ01">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <pointsize>9</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Save Result (Zone 1)&lt;/h2&gt;
+&lt;p&gt;Use for saving the processed results based on the count detections and predictions onto some file/data memory for further usages.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Saving Plate Detection Results&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	font: bold;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 220, 127);
+}
+
+QPushButton:hover {
+	background-color: rgb(0, 255, 127);
+}
+
+QPushButton:pressed {
+	background-color: rgb(0, 185, 127);
+}</string>
+         </property>
+         <property name="text">
+          <string>Save</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="1">
+      <widget class="QGraphicsView" name="PDZ01GraphicalFieldView">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <layout class="QHBoxLayout" name="PlateDetectionSecondZoneLayout">
+       <item>
+        <widget class="QLabel" name="CountDetectedPD02Label">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Count Detection (Zone 2)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the detected count plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Count Detection&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="text">
+          <string>Count Detected:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="CountDetectedPDZ02LineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Count Detection (Zone 2)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the detected count plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Count Detection&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="PredictionPDZ02Label">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Prediction (Zone 2)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the predicted plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Prediction&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="text">
+          <string>Prediction:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="PredictionPDZ02LineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Prediction (Zone 2)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the predicted plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Prediction&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="SaveButtonPDZ02">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <pointsize>9</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Save Result (Zone 2)&lt;/h2&gt;
+&lt;p&gt;Use for saving the processed results based on the count detections and predictions onto some file/data memory for further usages.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Saving Plate Detection Results&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	font: bold;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 220, 127);
+}
+
+QPushButton:hover {
+	background-color: rgb(0, 255, 127);
+}
+
+QPushButton:pressed {
+	background-color: rgb(0, 185, 127);
+}</string>
+         </property>
+         <property name="text">
+          <string>Save</string>
+         </property>
+         <property name="icon">
+          <iconset theme="applications-other"/>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0">
+      <layout class="QHBoxLayout" name="PlateDetectionOriginalLayout">
+       <item>
+        <widget class="QLabel" name="CountDetectedPDOLabel">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Count Detection (Original)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the detected count plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Count Detection&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="text">
+          <string>Count Detected:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="CountDetectedPDOLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Count Detection (Original)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the detected count plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Count Detection&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="PredictionPDOLabel">
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Prediction (Original)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the predicted plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Prediction&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="text">
+          <string>Prediction:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="PredictionPDOLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Prediction (Original)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the predicted plate based on the modifications in the camera field trick above.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Prediction&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="ShowResultButtonPDO">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI Variable Display</family>
+           <pointsize>9</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Result (Original)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the given result based on the count detections and predictions.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Result&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	font: bold;
+	color: rgb(255, 255, 255);
+	background-color: rgb(255, 85, 220);
+}
+
+QPushButton:hover {
+	background-color: rgb(255, 120, 255);
+}
+
+QPushButton:pressed {
+	background-color: rgb(255, 15, 185);
+}</string>
+         </property>
+         <property name="text">
+          <string>Result</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>423</x>
+      <y>625</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="FourProcessingAnalyticalLayout">
+     <item>
+      <widget class="QPushButton" name="ButtonID01">
+       <property name="font">
+        <font>
+         <family>Fira Code Medium</family>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Unknown - Button ID: 1&lt;/h2&gt;
+&lt;p&gt;Button with ID 1 feature may be coming out soon explanatively.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Not Implemented Yet&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: bold;
+	background-color: rgb(85, 85, 127);
+}
+
+QPushButton:hover {
+	background-color: rgb(85, 120, 255);
+}
+
+QPushButton:pressed {
+	color: white;
+	background-color: rgb(85, 190, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ButtonID02">
+       <property name="font">
+        <font>
+         <family>Fira Code Medium</family>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Unknown - Button ID: 2&lt;/h2&gt;
+&lt;p&gt;Button with ID 2 feature may be coming out soon explanatively.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Not Implemented Yet&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: bold;
+	background-color: rgb(85, 85, 127);
+}
+
+QPushButton:hover {
+	background-color: rgb(85, 120, 255);
+}
+
+QPushButton:pressed {
+	color: white;
+	background-color: rgb(85, 190, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ButtonID03">
+       <property name="font">
+        <font>
+         <family>Fira Code Medium</family>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Unknown - Button ID: 3&lt;/h2&gt;
+&lt;p&gt;Button with ID 3 feature may be coming out soon explanatively.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Not Implemented Yet&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: bold;
+	background-color: rgb(85, 85, 127);
+}
+
+QPushButton:hover {
+	background-color: rgb(85, 120, 255);
+}
+
+QPushButton:pressed {
+	color: white;
+	background-color: rgb(85, 190, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ButtonID04">
+       <property name="font">
+        <font>
+         <family>Fira Code Medium</family>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Unknown - Button ID: 4&lt;/h2&gt;
+&lt;p&gt;Button with ID 4 feature may be coming out soon explanatively.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Not Implemented Yet&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	font: bold;
+	background-color: rgb(85, 85, 127);
+}
+
+QPushButton:hover {
+	background-color: rgb(85, 120, 255);
+}
+
+QPushButton:pressed {
+	color: white;
+	background-color: rgb(85, 190, 255);
+}</string>
+       </property>
+       <property name="text">
+        <string>4</string>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QSlider" name="SliderReviewer">
+    <property name="geometry">
+     <rect>
+      <x>604</x>
+      <y>625</y>
+      <width>160</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Unknown - Plate Detection Slider (Manual Dragging Values)&lt;/h2&gt;
+&lt;p&gt;Acts as a usual slider as always, going from the least minimum value (assuming at 0), up to a certain maximum value as one pinpointed at the right side mini slider value displayer.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Not Implemented Yet&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="LeftSideSliderNumberDisplayer">
+    <property name="geometry">
+     <rect>
+      <x>549</x>
+      <y>625</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Fira Code</family>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Unknown - Display Slider Value (Left Side)&lt;/h2&gt;
+&lt;p&gt;Mini slider value displayer for showing a current specific value representing the amount of upsteps of value by the slider (possibility going from the least minimum: 0, up to certain maximum value of the slider).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Not Implemented Yet&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="inputMask">
+     <string/>
+    </property>
+    <property name="text">
+     <string>00.00</string>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="RightSideSliderNumberDisplayer">
+    <property name="geometry">
+     <rect>
+      <x>768</x>
+      <y>625</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Fira Code</family>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Unknown - Display Slider Value (Right Side)&lt;/h2&gt;
+&lt;p&gt;Mini slider value displayer for showing a current specific value representing the amount of upsteps of value by the slider (possibility for the maximum slider value).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Not Implemented Yet&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="text">
+     <string>00.00</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ShowResultZone1">
+    <property name="geometry">
+     <rect>
+      <x>825</x>
+      <y>620</y>
+      <width>116</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+      <pointsize>9</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Result (Zone 1)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the given result based on the count detections and predictions.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Result&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	font: bold;
+	color: rgb(255, 255, 255);
+	border-radius: 10px;
+	background-color: rgb(255, 85, 220);
+}
+
+QPushButton:hover {
+	background-color: rgb(255, 120, 255);
+}
+
+QPushButton:pressed {
+	background-color: rgb(255, 15, 185);
+}</string>
+    </property>
+    <property name="text">
+     <string>Result (Zone 1)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ShowResultZone2">
+    <property name="geometry">
+     <rect>
+      <x>945</x>
+      <y>620</y>
+      <width>116</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+      <pointsize>9</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Plate Detection - Show Result (Zone 2)&lt;/h2&gt;
+&lt;p&gt;Use for displaying the given result based on the count detections and predictions.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;Given Plate Detection Result&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	font: bold;
+	color: rgb(255, 255, 255);
+	border-radius: 10px;
+	background-color: rgb(255, 85, 220);
+}
+
+QPushButton:hover {
+	background-color: rgb(255, 120, 255);
+}
+
+QPushButton:pressed {
+	background-color: rgb(255, 15, 185);
+}</string>
+    </property>
+    <property name="text">
+     <string>Result (Zone 2)</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>422</x>
+      <y>405</y>
+      <width>397</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="FCFV_FirstZoneOperationField">
+     <item row="0" column="1" rowspan="2">
+      <widget class="Line" name="FCFV_FZOF_LineYAxisOperationSeparator">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QRadioButton" name="FCFV_FZOF_SecondModeRadioButton">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QRadioButton {
+	font: bold;
+}
+
+QRadioButton:hover {
+	color: rgb(255, 135, 150);
+}
+
+QRadioButton:pressed {
+	color: rgb(255, 100, 185);
+}</string>
+       </property>
+       <property name="text">
+        <string>Mode 2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QRadioButton" name="FCFV_FZOF_FirstModeRadioButton">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QRadioButton {
+	font: bold;
+}
+
+QRadioButton:hover {
+	color: rgb(255, 185, 115);
+}
+
+QRadioButton:pressed {
+	color: rgb(255, 220, 150);
+}</string>
+       </property>
+       <property name="text">
+        <string>Mode 1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLabel" name="FCFV_FZOF_BetaLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - (β) Beta Value&lt;/h2&gt;
+&lt;p&gt;Set out the beta (β) value within the range of 0 up to 1,000 (excluding negative numbers and numbers above 1,000 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-1,000 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="text">
+        <string>Beta (β)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLabel" name="FCFV_FZOF_RotateLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Degrees&lt;/h2&gt;
+&lt;p&gt;Drag up/down the spin box (or capture exact degrees value), going from 0 up to 360.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-360 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="text">
+        <string>Rotate (degrees)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QSpinBox" name="FCFV_FZOF_AlphaSpinBox">
+       <property name="font">
+        <font>
+         <family>Fira Code</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - (α) Alpha Value&lt;/h2&gt;
+&lt;p&gt;Set out the alpha (α) value within the range of 0 up to 1,000 (excluding negative numbers and numbers above 1,000 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-1,000 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="FCFV_FZOF_ZoomInOutLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Zoom (IN/OUT) Value&lt;/h2&gt;
+&lt;p&gt;Set out the beta (β) value within the range of 0 up to 100 (excluding negative numbers and numbers above 100 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-100 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="text">
+        <string>Zoom (in/out)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="FCFV_FZOF_AlphaLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - (α) Alpha Value&lt;/h2&gt;
+&lt;p&gt;Set out the alpha (α) value within the range of 0 up to 1,000 (excluding negative numbers and numbers above 1,000 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-1,000 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="text">
+        <string>Alpha (α)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QSpinBox" name="FCFV_FZOF_BetaSpinBox">
+       <property name="font">
+        <font>
+         <family>Fira Code</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - (β) Beta Value&lt;/h2&gt;
+&lt;p&gt;Set out the beta (β) value within the range of 0 up to 1,000 (excluding negative numbers and numbers above 1,000 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-1,000 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QDoubleSpinBox" name="FCFV_FZOF_ZoomInOutSpinBox">
+       <property name="font">
+        <font>
+         <family>Fira Code</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Zoom (IN/OUT) Value&lt;/h2&gt;
+&lt;p&gt;Set out the beta (β) value within the range of 0 up to 100 (excluding negative numbers and numbers above 100 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-100 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QSpinBox" name="FCFV_FZOF_RotateSpinBox">
+       <property name="font">
+        <font>
+         <family>Fira Code</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Degrees&lt;/h2&gt;
+&lt;p&gt;Drag up/down the spin box (or capture exact degrees value), going from 0 up to 360.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-360 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="maximum">
+        <number>360</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>825</x>
+      <y>406</y>
+      <width>397</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="FCFV_SecondZoneOperationField">
+     <item row="0" column="5">
+      <widget class="QSpinBox" name="FCFV_SZOF_BetaSpinBox">
+       <property name="font">
+        <font>
+         <family>Fira Code</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - (β) Beta Value&lt;/h2&gt;
+&lt;p&gt;Set out the beta (β) value within the range of 0 up to 1,000 (excluding negative numbers and numbers above 1,000 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-1,000 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QDoubleSpinBox" name="FCFV_SZOF_ZoomInOutSpinBox">
+       <property name="font">
+        <font>
+         <family>Fira Code</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Zoom (IN/OUT) Value&lt;/h2&gt;
+&lt;p&gt;Set out the beta (β) value within the range of 0 up to 100 (excluding negative numbers and numbers above 100 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-100 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>1.000000000000000</double>
+       </property>
+       <property name="stepType">
+        <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+       </property>
+       <property name="value">
+        <double>0.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QSpinBox" name="FCFV_SZOF_AlphaSpinBox">
+       <property name="font">
+        <font>
+         <family>Fira Code</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - (α) Alpha Value&lt;/h2&gt;
+&lt;p&gt;Set out the alpha (α) value within the range of 0 up to 1,000 (excluding negative numbers and numbers above 1,000 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-1,000 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QRadioButton" name="FCFV_SZOF_FirstModeRadioButton">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QRadioButton {
+	font: bold;
+}
+
+QRadioButton:hover {
+	color: rgb(255, 185, 115);
+}
+
+QRadioButton:pressed {
+	color: rgb(255, 220, 150);
+}</string>
+       </property>
+       <property name="text">
+        <string>Mode 1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="FCFV_SZOF_ZoomInOutLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Zoom (IN/OUT) Value&lt;/h2&gt;
+&lt;p&gt;Set out the beta (β) value within the range of 0 up to 100 (excluding negative numbers and numbers above 100 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-100 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="text">
+        <string>Zoom (in/out)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="FCFV_SZOF_AlphaLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - (α) Alpha Value&lt;/h2&gt;
+&lt;p&gt;Set out the alpha (α) value within the range of 0 up to 1,000 (excluding negative numbers and numbers above 1,000 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-1,000 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="text">
+        <string>Alpha (α)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QRadioButton" name="FCFV_SZOF_SecondModeRadioButton">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QRadioButton {
+	font: bold;
+}
+
+QRadioButton:hover {
+	color: rgb(255, 135, 150);
+}
+
+QRadioButton:pressed {
+	color: rgb(255, 100, 185);
+}</string>
+       </property>
+       <property name="text">
+        <string>Mode 2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QSpinBox" name="FCFV_SZOF_RotateSpinBox">
+       <property name="font">
+        <font>
+         <family>Fira Code</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Degrees&lt;/h2&gt;
+&lt;p&gt;Drag up/down the spin box (or capture exact degrees value), going from 0 up to 360.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-360 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="maximum">
+        <number>360</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLabel" name="FCFV_SZOF_RotateLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - Degrees&lt;/h2&gt;
+&lt;p&gt;Drag up/down the spin box (or capture exact degrees value), going from 0 up to 360.&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-360 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="text">
+        <string>Rotate (degrees)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" rowspan="2">
+      <widget class="Line" name="FCFV_SZOF_LineYAxisOperationSeparator">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLabel" name="FCFV_SZOF_BetaLabel">
+       <property name="font">
+        <font>
+         <family>Segoe UI Variable Display</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+&lt;/style&gt;
+&lt;body style=&quot;text-align:center;&quot;&gt;
+
+&lt;h2&gt;Spin Box - (β) Beta Value&lt;/h2&gt;
+&lt;p&gt;Set out the beta (β) value within the range of 0 up to 1,000 (excluding negative numbers and numbers above 1,000 for now).&lt;/p&gt;
+
+&lt;div class=&quot;tooltip&quot;&gt;Useful tips:
+  &lt;span class=&quot;tooltiptext&quot;&gt;0-1,000 Only&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+       </property>
+       <property name="text">
+        <string>Beta (β)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="CreationAndUsagePurposes">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>20</y>
+      <width>400</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;i&gt;Creation and Usage Purposes for: &lt;strong&gt;FTDC Lab Tel-U.&lt;/strong&gt;&lt;/i&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="OpenSourceReserved">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>40</y>
+      <width>400</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;i&gt;@Open Source Project (Reserved), &lt;strong&gt;January 2024&lt;/strong&gt; by: &lt;strong&gt;Immanuel Eben.&lt;strong&gt;&lt;/i&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MyGitHubProfile">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>625</y>
+      <width>200</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;strong&gt;@GitHub: EintsWaveX&lt;/strong&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LastModifiedApplicationDate">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>640</y>
+      <width>200</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable Display</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;i&gt;Last Modified: 13th January 2024&lt;/i&gt;</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
