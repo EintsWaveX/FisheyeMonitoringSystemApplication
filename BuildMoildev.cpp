@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
     } else if (EXECINPOSIX) {
         if ((strcmp(StringUppercase(argv[1]), "RUN") == 0 || strcmp(StringUppercase(argv[1]), "-R") == 0 || strcmp(StringUppercase(argv[1]), "--RUN") == 0) && (strcmp(StringUppercase(argv[2]), "UNIX") == 0 || strcmp(StringUppercase(argv[2]), "MACH") == 0 || strcmp(StringUppercase(argv[2]), "APPLE") == 0)) {
             snprintf(OutputSystemExecuting, 1024, 
-            "%s %s %s %s \"%s\" %s%s", 
+            "%s %s %s %s \"%s\" %s %s%s", 
             MoildevBuilder.CPPCompiler, MoildevBuilder.IntoObject,
             MoildevBuilder.Executable, MoildevBuilder.CPPSourceFile,
             MoildevBuilder.LocalSourceDirectory, MoildevBuilder.PackageConfigurations,
